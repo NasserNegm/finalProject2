@@ -1,8 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:final_project/logic/login_bloc/cubit.dart';
 import 'package:final_project/logic/login_bloc/state.dart';
 import 'package:final_project/presentation/bottom_nav.dart';
-import 'package:final_project/presentation/home_page.dart';
-import 'package:final_project/presentation/edit_profile.dart';
+
 import 'package:final_project/presentation/signup.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -31,12 +31,12 @@ class LoginScreen extends StatelessWidget {
         child: BlocConsumer<LoginCubit, LoginState>(listener: (context, state) {
           if (state is LoginSuccessState) {
             ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Login is successful')));
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => BottomNav()));
+                SnackBar(content: Text('Login is successful'.tr())));
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const BottomNav()));
           } else if (state is LoginErrorState) {
             ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('invalid email or passwod')));
+                SnackBar(content: Text('invalid email or passwod'.tr())));
           }
         },
             //////// I used builder to rebuild the full screen .
@@ -78,8 +78,8 @@ class LoginScreen extends StatelessWidget {
                         style: const TextStyle(color: Colors.white),
                         cursorColor: Colors.white,
 
-                        decoration: const InputDecoration(
-                          hintText: 'Email',
+                        decoration: InputDecoration(
+                          hintText: 'Email'.tr(),
                           hintStyle: TextStyle(
                               color: Colors.white70,
                               fontSize: 16,
@@ -108,8 +108,8 @@ class LoginScreen extends StatelessWidget {
                         style: const TextStyle(color: Colors.white),
                         cursorColor: Colors.white,
                         obscureText: true,
-                        decoration: const InputDecoration(
-                          hintText: 'Password',
+                        decoration: InputDecoration(
+                          hintText: 'Password'.tr(),
                           hintStyle: TextStyle(
                               color: Colors.white70,
                               fontSize: 16,
@@ -138,9 +138,9 @@ class LoginScreen extends StatelessWidget {
                         decoration: BoxDecoration(
                             color: Colors.blue,
                             borderRadius: BorderRadius.circular(10)),
-                        child: const Center(
+                        child: Center(
                             child: Text(
-                          'Login',
+                          'Log in'.tr(),
                           style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.w600,
@@ -152,8 +152,8 @@ class LoginScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        const Text(
-                          'Don’t have an Email ?',
+                        Text(
+                          'Don’t have an Email ?'.tr(),
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w600,
@@ -167,10 +167,10 @@ class LoginScreen extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => SignUp()));
+                                    builder: (context) => const SignUp()));
                           },
-                          child: const Text(
-                            'Register',
+                          child: Text(
+                            'Register'.tr(),
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,

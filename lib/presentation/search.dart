@@ -1,7 +1,4 @@
-import 'package:final_project/presentation/home_page.dart';
-import 'package:final_project/presentation/post.dart';
-import 'package:final_project/presentation/profile.dart';
-import 'package:final_project/presentation/reels.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class Search extends StatefulWidget {
@@ -121,9 +118,9 @@ class _SearchState extends State<Search> {
               style: const TextStyle(color: Colors.white),
               cursorColor: Colors.white,
 
-              decoration: const InputDecoration(
+              decoration: InputDecoration(
                 prefixIcon: Icon(Icons.search),
-                hintText: 'Search',
+                hintText: 'Search'.tr(),
                 hintStyle: TextStyle(
                     color: Colors.white70,
                     fontSize: 16,

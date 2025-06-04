@@ -1,7 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:final_project/presentation/post.dart';
-import 'package:final_project/presentation/profile.dart';
-import 'package:final_project/presentation/reels.dart';
-import 'package:final_project/presentation/search.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -18,7 +17,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             'Instagram',
             style: TextStyle(
                 color: Colors.black,
@@ -32,16 +31,20 @@ class _HomePageState extends State<HomePage> {
             SvgPicture.asset('assets/message.svg'),
           ],
           leading: IconButton(
-              onPressed: () {}, icon: Icon(Icons.camera_alt_outlined)),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Post()));
+              },
+              icon: const Icon(Icons.camera_alt_outlined)),
         ),
         body: ListView(scrollDirection: Axis.vertical, children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 10.0),
+                padding: EdgeInsets.only(left: 10.0),
                 child: Text(
-                  'Story',
+                  'Story'.tr(),
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 18.0,
@@ -80,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                               borderRadius: BorderRadius.circular(20),
                             ),
                             // alignment: Alignment.bottomRight,
-                            child: Icon(
+                            child: const Icon(
                               Icons.add,
                               color: Colors.white,
                             ),
@@ -88,11 +91,11 @@ class _HomePageState extends State<HomePage> {
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10.0,
                     ),
                     Container(
-                      padding: EdgeInsets.all(2.0),
+                      padding: const EdgeInsets.all(2.0),
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           border: Border.all(color: Colors.pink, width: 2)),
@@ -105,11 +108,11 @@ class _HomePageState extends State<HomePage> {
                             width: 65,
                           )),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 8.0,
                     ),
                     Container(
-                      padding: EdgeInsets.all(2.0),
+                      padding: const EdgeInsets.all(2.0),
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           border: Border.all(color: Colors.pink, width: 2)),
@@ -122,11 +125,11 @@ class _HomePageState extends State<HomePage> {
                             width: 65,
                           )),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 8.0,
                     ),
                     Container(
-                      padding: EdgeInsets.all(2.0),
+                      padding: const EdgeInsets.all(2.0),
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           border: Border.all(color: Colors.pink, width: 2)),
@@ -139,11 +142,11 @@ class _HomePageState extends State<HomePage> {
                             width: 65,
                           )),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 8.0,
                     ),
                     Container(
-                      padding: EdgeInsets.all(2.0),
+                      padding: const EdgeInsets.all(2.0),
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           border: Border.all(color: Colors.pink, width: 2)),
@@ -156,11 +159,11 @@ class _HomePageState extends State<HomePage> {
                             width: 65,
                           )),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 8.0,
                     ),
                     Container(
-                      padding: EdgeInsets.all(2.0),
+                      padding: const EdgeInsets.all(2.0),
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           border: Border.all(color: Colors.pink, width: 2)),
@@ -177,9 +180,9 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 10.0),
+                padding: EdgeInsets.only(left: 10.0),
                 child: Text(
-                  'Your story',
+                  'YourStory'.tr(),
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 15.0,
@@ -281,7 +284,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ],
                       ),
-                      const Row(
+                      Row(
                         children: [
                           Text(
                             '100',
@@ -291,25 +294,25 @@ class _HomePageState extends State<HomePage> {
                           Padding(
                             padding: EdgeInsets.only(left: 5),
                             child: Text(
-                              'Likes',
+                              'Likes'.tr(),
                               style: TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.w500),
                             ),
                           ),
                         ],
                       ),
-                      const Row(
+                      Row(
                         children: [
                           Padding(
                             padding: EdgeInsets.only(right: 5),
                             child: Text(
-                              'Username',
+                              'UserName'.tr(),
                               style: TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.w500),
                             ),
                           ),
                           Text(
-                            'nasserNegm',
+                            'UserName'.tr(),
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.w500),
                           ),

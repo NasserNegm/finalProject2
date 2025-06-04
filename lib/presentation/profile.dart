@@ -1,11 +1,8 @@
 import 'dart:math';
 
-import 'package:final_project/presentation/home_page.dart';
-import 'package:final_project/presentation/edit_profile.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:final_project/presentation/create_profile.dart';
 import 'package:final_project/presentation/create_reel.dart';
-import 'package:final_project/presentation/post.dart';
-import 'package:final_project/presentation/reels.dart';
-import 'package:final_project/presentation/search.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -122,8 +119,8 @@ class _ProfileState extends State<Profile> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
-                  'Username',
+                Text(
+                  'Username'.tr(),
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
                 ),
                 SvgPicture.asset('assets/@.svg'),
@@ -175,24 +172,24 @@ class _ProfileState extends State<Profile> {
                     ],
                   ),
                 ),
-                const Text(
-                  'post',
+                Text(
+                  'Post'.tr(),
                   style: TextStyle(fontWeight: FontWeight.w500),
                 ),
-                const Text(
-                  'followers',
+                Text(
+                  'followers'.tr(),
                   style: TextStyle(fontWeight: FontWeight.w500),
                 ),
-                const Text(
-                  'following',
+                Text(
+                  'following'.tr(),
                   style: TextStyle(fontWeight: FontWeight.w500),
                 ),
               ],
             ),
-            const Padding(
-              padding: const EdgeInsets.all(8.0),
+            Padding(
+              padding: EdgeInsets.all(8.0),
               child: Text(
-                'Name',
+                'Name'.tr(),
                 style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
               ),
             ),
@@ -204,33 +201,33 @@ class _ProfileState extends State<Profile> {
                   child: InkWell(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => ProfileScreen()));
+                          builder: (context) => CreateProfile()));
                     },
                     child: Container(
-                      margin: EdgeInsets.only(left: 10),
+                      margin: const EdgeInsets.only(left: 10),
                       height: 35,
                       width: 130,
                       decoration: BoxDecoration(
                           border: Border.all(width: 3),
                           borderRadius: BorderRadius.circular(10)),
-                      child: Center(child: Text('Edit profile')),
+                      child: Center(child: Text('Edit profile'.tr())),
                     ),
                   ),
                 ),
                 Expanded(
                   flex: 2,
                   child: Container(
-                    margin: EdgeInsets.symmetric(horizontal: 5),
+                    margin: const EdgeInsets.symmetric(horizontal: 5),
                     height: 35,
                     width: 150,
                     decoration: BoxDecoration(
                         border: Border.all(width: 3),
                         borderRadius: BorderRadius.circular(10)),
-                    child: const Center(child: Text('Share profile')),
+                    child: Center(child: Text('Share profile'.tr())),
                   ),
                 ),
                 Container(
-                    margin: EdgeInsets.only(right: 10),
+                    margin: const EdgeInsets.only(right: 10),
                     height: 35,
                     width: 40,
                     decoration: BoxDecoration(
@@ -242,10 +239,10 @@ class _ProfileState extends State<Profile> {
                     ))),
               ],
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
-                'Discover people',
+                'Discover people'.tr(),
                 style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
               ),
             ),
@@ -281,8 +278,10 @@ class _ProfileState extends State<Profile> {
               children: [
                 InkWell(
                     onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Profile()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Profile()));
                     },
                     child: IconButton(
                         onPressed: () {}, icon: const Icon(Icons.menu))),
@@ -291,7 +290,7 @@ class _ProfileState extends State<Profile> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => CreateReel()));
+                              builder: (context) => const CreateReel()));
                     },
                     icon: const Icon(Icons.video_collection_sharp)),
                 IconButton(
@@ -299,16 +298,16 @@ class _ProfileState extends State<Profile> {
                     icon: const Icon(Icons.person_pin_rounded)),
               ],
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
-                'Complete your profile',
+                'Complete your profile'.tr(),
                 style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
               ),
             ),
-            const Row(
+            Row(
               children: [
-                Padding(
+                const Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Text(
                     '3 of 4',
@@ -316,10 +315,10 @@ class _ProfileState extends State<Profile> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    'complete',
-                    style: TextStyle(color: Colors.grey),
+                    'Complete'.tr(),
+                    style: const TextStyle(color: Colors.grey),
                   ),
                 ),
               ],
@@ -346,13 +345,14 @@ class _ProfileState extends State<Profile> {
                                 border: Border.all(width: 2),
                                 shape: BoxShape.circle),
                             child: SvgPicture.asset('assets/message.svg')),
-                        const Text(
-                          'Add a bio',
+                        Text(
+                          'Add a bio'.tr(),
                           style: TextStyle(
                               fontWeight: FontWeight.w500, fontSize: 20),
                         ),
-                        const Text(
-                          'Tell ypur followers a little bit about yourself',
+                        Text(
+                          'Tell your followers a little bit about yourself'
+                              .tr(),
                           style: TextStyle(color: Colors.grey),
                         ),
                         Container(
@@ -362,9 +362,9 @@ class _ProfileState extends State<Profile> {
                           decoration: BoxDecoration(
                               color: Colors.blue,
                               borderRadius: BorderRadius.circular(10)),
-                          child: const Center(
+                          child: Center(
                             child: Text(
-                              'Add bio',
+                              'Add bio'.tr(),
                               style: TextStyle(
                                   fontWeight: FontWeight.w500, fontSize: 20),
                             ),
@@ -391,14 +391,14 @@ class _ProfileState extends State<Profile> {
                                 border: Border.all(width: 2),
                                 shape: BoxShape.circle),
                             child: const Icon(Icons.people_outline)),
-                        const Text(
-                          'Find people to follow',
+                        Text(
+                          'Find people to follow'.tr(),
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
                           ),
                         ),
-                        const Text(
-                          'Follow 5 or more accounts',
+                        Text(
+                          'Follow 5 or more accounts'.tr(),
                           style: TextStyle(color: Colors.grey),
                         ),
                         Container(
@@ -408,9 +408,9 @@ class _ProfileState extends State<Profile> {
                           decoration: BoxDecoration(
                               border: Border.all(width: 1),
                               borderRadius: BorderRadius.circular(10)),
-                          child: const Center(
+                          child: Center(
                             child: Text(
-                              'Find more',
+                              'Find more'.tr(),
                               style: TextStyle(
                                   fontWeight: FontWeight.w500, fontSize: 20),
                             ),
@@ -436,15 +436,16 @@ class _ProfileState extends State<Profile> {
                             decoration: BoxDecoration(
                                 border: Border.all(width: 2),
                                 shape: BoxShape.circle),
-                            child: Icon(Icons.person_outline)),
-                        const Text(
-                          'Add your name',
+                            child: const Icon(Icons.person_outline)),
+                        Text(
+                          'Add your name'.tr(),
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
                           ),
                         ),
-                        const Text(
-                          'Add your full name so your friends know its you',
+                        Text(
+                          'Add your full name so your friends know its you'
+                              .tr(),
                           style: TextStyle(color: Colors.grey),
                         ),
                         Container(
@@ -454,9 +455,9 @@ class _ProfileState extends State<Profile> {
                           decoration: BoxDecoration(
                               border: Border.all(width: 1),
                               borderRadius: BorderRadius.circular(10)),
-                          child: const Center(
+                          child: Center(
                             child: Text(
-                              'Edit name',
+                              'Edit name'.tr(),
                               style: TextStyle(
                                   fontWeight: FontWeight.w500, fontSize: 20),
                             ),
@@ -483,14 +484,15 @@ class _ProfileState extends State<Profile> {
                                 border: Border.all(width: 2),
                                 shape: BoxShape.circle),
                             child: const Icon(Icons.person_pin)),
-                        const Text(
-                          'Add a profile photo',
+                        Text(
+                          'Add a profile photo'.tr(),
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
                           ),
                         ),
-                        const Text(
-                          'Choose a photo to represent yourself on instagram.',
+                        Text(
+                          'Choose a photo to represent yourself on instagram'
+                              .tr(),
                           style: TextStyle(color: Colors.grey),
                         ),
                         Container(
@@ -500,9 +502,9 @@ class _ProfileState extends State<Profile> {
                           decoration: BoxDecoration(
                               border: Border.all(width: 1),
                               borderRadius: BorderRadius.circular(10)),
-                          child: const Center(
+                          child: Center(
                             child: Text(
-                              'Change photo',
+                              'Change photo'.tr(),
                               style: TextStyle(
                                   fontWeight: FontWeight.w500, fontSize: 20),
                             ),

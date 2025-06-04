@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:image_picker/image_picker.dart';
@@ -84,16 +85,16 @@ class _PostState extends State<Post> {
         // backgroundColor: Colors.black,
         appBar: AppBar(
           // backgroundColor: Colors.black,
-          title: const Text(
-            'post to',
+          title: Text(
+            'Post to'.tr(),
             style: TextStyle(
                 color: Colors.black, fontSize: 20, fontWeight: FontWeight.w400),
           ),
           actions: [
             TextButton(
               onPressed: () {},
-              child: const Text(
-                'post',
+              child: Text(
+                'Post'.tr(),
                 style: TextStyle(
                     color: Colors.blue,
                     fontSize: 20,
@@ -115,15 +116,18 @@ class _PostState extends State<Post> {
             const SizedBox(
               height: 20,
             ),
-            ElevatedButton(onPressed: (pickeImage), child: Text('Pick Image')),
+            ElevatedButton(
+                onPressed: (pickeImage), child: Text('Pick Image'.tr())),
             const SizedBox(
               height: 10,
             ),
-            ElevatedButton(onPressed: (pickVideo), child: Text('Pick Video')),
+            ElevatedButton(
+                onPressed: (pickVideo), child: Text('Pick Video'.tr())),
             const SizedBox(
               height: 10,
             ),
-            ElevatedButton(onPressed: (pickAudio), child: Text('Pick Audio')),
+            ElevatedButton(
+                onPressed: (pickAudio), child: Text('Pick Audio'.tr())),
           ]),
         ));
   }

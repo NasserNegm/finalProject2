@@ -4,7 +4,7 @@ class ProfileModel {
   String website;
   String bio;
   String email;
-  int phone;
+  String phone;
   String gender;
 
   // Constructor to initialize the fields

@@ -1,8 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:final_project/logic/signup_bloc/cubit.dart';
 import 'package:final_project/logic/signup_bloc/state.dart';
-import 'package:final_project/presentation/home_page.dart';
+
 import 'package:final_project/presentation/login_screen.dart';
-import 'package:final_project/presentation/edit_profile.dart';
+import 'package:final_project/presentation/create_profile.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 // import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -29,11 +30,12 @@ class SignUp extends StatelessWidget {
         listener: (context, state) {
           if (state is SignupSuccessState) {
             ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                  content: Text('Your email and password were created')),
+              SnackBar(
+                  content: Text(
+                      "Your email and password were create sucessful".tr())),
             );
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => ProfileScreen()));
+                MaterialPageRoute(builder: (context) => CreateProfile()));
           } else if (state is SignupErrorState) {
             ScaffoldMessenger.of(context)
                 .showSnackBar(SnackBar(content: Text(state.Er)));
@@ -68,7 +70,7 @@ class SignUp extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const Text('Create New Account ',
+                  Text('Create New Account '.tr(),
                       style: TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.w700,
@@ -76,10 +78,10 @@ class SignUp extends StatelessWidget {
                   const SizedBox(
                     height: 30,
                   ),
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.only(right: 270),
                     child: Text(
-                      'Email',
+                      'Email'.tr(),
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 14,
@@ -113,10 +115,10 @@ class SignUp extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.only(right: 240),
                     child: Text(
-                      'Password',
+                      'Password'.tr(),
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 14,
@@ -141,8 +143,8 @@ class SignUp extends StatelessWidget {
                       style: const TextStyle(color: Colors.white),
                       cursorColor: Colors.white,
                       obscureText: true,
-                      decoration: const InputDecoration(
-                        hintText: 'Enter Your Password',
+                      decoration: InputDecoration(
+                        hintText: 'Enter Your Password'.tr(),
                         hintStyle: TextStyle(
                             color: Colors.white70,
                             fontSize: 16,
@@ -167,8 +169,8 @@ class SignUp extends StatelessWidget {
                       style: const TextStyle(color: Colors.white),
                       cursorColor: Colors.white,
                       obscureText: true,
-                      decoration: const InputDecoration(
-                        hintText: 'Re-Enter Your Password',
+                      decoration: InputDecoration(
+                        hintText: 'Re-Enter Your Password'.tr(),
                         hintStyle: TextStyle(
                             color: Colors.white70,
                             fontSize: 16,
@@ -197,9 +199,9 @@ class SignUp extends StatelessWidget {
                       decoration: BoxDecoration(
                           color: Colors.blue,
                           borderRadius: BorderRadius.circular(10)),
-                      child: const Center(
+                      child: Center(
                           child: Text(
-                        'Sign up',
+                        'Sign up'.tr(),
                         style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.w600,
@@ -215,8 +217,8 @@ class SignUp extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      const Text(
-                        'You have already an account ?',
+                      Text(
+                        'You have already an account ?'.tr(),
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w600,
@@ -232,8 +234,8 @@ class SignUp extends StatelessWidget {
                                 MaterialPageRoute(
                                     builder: (context) => const LoginScreen()));
                           },
-                          child: const Text(
-                            'Log In',
+                          child: Text(
+                            'Log In'.tr(),
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
